@@ -51,6 +51,7 @@ const Tables = () => {
     setOpen(true);
   };
 
+  // Columns that will show in table
   const columns = [
     {
       name: 'category',
@@ -131,6 +132,7 @@ const Tables = () => {
       },
     },
   ];
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Cars" />

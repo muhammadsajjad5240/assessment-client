@@ -4,11 +4,16 @@
 import { api } from './index';
 import { toast } from 'react-toastify';
 
+// In below function we are displaying toast messages
+
 const notify = (errorMessage: string) => {
   toast.error(errorMessage, {
     position: toast.POSITION.TOP_RIGHT,
   });
 };
+
+// Below we are getting categories list from the server
+
 export const getCategoriesList = async () => {
   try {
     const { data } = await api.get('/category');
@@ -19,6 +24,8 @@ export const getCategoriesList = async () => {
   }
 };
 
+// Below we are getting single category by IDt from the server
+
 export const getCategory = async (id: string) => {
   try {
     const { data } = await api.get(`/category/${id}`);
@@ -28,6 +35,8 @@ export const getCategory = async (id: string) => {
   }
 };
 
+// Below we are updating single category by ID
+
 export const updateCategory = async ({ id, car }: { id: string; car: any }) => {
   try {
     const { data } = await api.patch(`/category/${id}`, car);
@@ -36,6 +45,8 @@ export const updateCategory = async ({ id, car }: { id: string; car: any }) => {
     console.error(e.message);
   }
 };
+
+// Below we are delete single category by ID
 
 export const deleteCategory = async (id: string) => {
   try {

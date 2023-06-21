@@ -14,7 +14,6 @@ import DefaultLayout from '../../layout/DefaultLayout';
 import {
   getCategoriesList,
   deleteCategory,
-  updateCategory,
   getCategory,
 } from '../../api/category';
 
@@ -50,6 +49,8 @@ const Tables = () => {
   const handleClickOpen = async () => {
     setOpen(true);
   };
+
+  // Columns that will show in table
 
   const columns = [
     {
@@ -104,9 +105,11 @@ const Tables = () => {
       },
     },
   ];
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Categories" />
+      {/* Model in which create and update form show */}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -135,6 +138,7 @@ const Tables = () => {
           <CategoryForm handleClose={handleClose} editData={editData} />
         </DialogContent>
       </Dialog>
+      {/*  */}
       <div className="flex flex-col gap-10">
         <TableOne
           addBtnText="Category"
